@@ -1,6 +1,9 @@
 const express = require("express");
 const cors = require("cors");
 const server = express();
+
+server.use(express.json())
+
 server.use(
     cors(
         {
@@ -10,11 +13,10 @@ server.use(
         }
         ))
 
-
 server.use(express.json());
 
 server.get("/", (req, res) => {
-  res.send("Bienvenido a mi super API con Express");
+  res.send("Esta es la más básica");
 });
 
 const PORT = 3000;
