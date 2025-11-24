@@ -1,8 +1,14 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const server = express();
+const connectToDatabase = require("./src/db/connectDB");
 
+const PORT = process.env.PORT || 3000;
+
+const server = express();
 server.use(express.json())
+
+connectToDatabase();
 
 server.use(
     cors(
@@ -18,8 +24,6 @@ server.use(express.json());
 server.get("/", (req, res) => {
   res.send("Esta es la más básica");
 });
-
-const PORT = 3000;
 
 server.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
