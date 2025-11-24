@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const connectToDatabase = require("./src/db/connectDB");
+const userRouter = require("./src/routers/userRouter")
 
 const PORT = process.env.PORT || 3000;
 
@@ -21,9 +22,7 @@ server.use(
 
 server.use(express.json());
 
-server.get("/", (req, res) => {
-  res.send("Esta es la más básica");
-});
+server.get("/api/users", userRouter)
 
 server.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
