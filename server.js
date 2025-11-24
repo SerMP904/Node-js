@@ -16,7 +16,7 @@ server.use(
     cors(
         {
             origin: "http://localhost:5173",
-            methods: ["GET", "POST", "PATCH", "OPTIONS"],
+            methods: ["GET", "POST", "PATCH", "OPTIONS", "DELETE"],
             allowedHeaders: ["Content-Type"],
         }
         ))
