@@ -15,7 +15,7 @@ const getUsersById = async (req, res) => {
   try {
     const { idUser } = req.params;
     const user = await userModel.findById(idUser);
-    if (!users) return res.status(200).send("no existe el usuario");
+    if (!user) return res.status(200).send("no existe el usuario");
     res.status(200).send({ status: "Success", data: user });
   } catch (error) {
     res.status(500).send({ status: "Failed", error: error.message });

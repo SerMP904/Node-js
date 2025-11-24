@@ -13,7 +13,7 @@ router.get("/:idUser", getUsersById);
 
 router.post("/", insertNewUser);
 
-router.delete("/", deleteUser);
+router.delete("/delete/:idUser", deleteUser);
 
 module.exports = router;
 const users = {
