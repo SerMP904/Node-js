@@ -27,7 +27,6 @@ const userSchema = new Schema({
         type: String,
         required: [true, "El rol es obligatorio"],
     }
-
 });
 
 const userModel = mongoose.model("Users", userSchema, "user")

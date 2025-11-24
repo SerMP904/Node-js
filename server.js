@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const connectToDatabase = require("./src/db/connectDB");
 const userRouter = require("./src/routers/userRouter")
+const movieRouter = require("./src/routers/movieRouter")
 
 const PORT = process.env.PORT || 3000;
 
@@ -22,7 +23,8 @@ server.use(
 
 server.use(express.json());
 
-server.get("/api/users", userRouter)
+server.use("/api/movie", movieRouter)
+server.use("/api/users", userRouter)
 
 server.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);

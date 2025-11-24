@@ -1,5 +1,10 @@
 const getAllUsers = (req, res) => {
-    res.send("esto devuelve todos los usuarios")
+    res.status(200).send("hola a todos los usuarios")
 }
 
-module.exports = {getAllUsers}
+const getUsersById = (req, res) => {
+    const { idUser } = req.params;
+    res.status(200).send(`hola al id use: ${idUser}`)
+}
+
+module.exports = {getAllUsers, getUsersById}
